@@ -1,5 +1,7 @@
 * {
   box-sizing:border-box;
+  margin: 0;
+  padding: 0;
 }
 html {
   height:100vh;
@@ -11,148 +13,213 @@ body {
   justify-content:center;
   align-items:center;
   color:#10214e;
+  font-family: 'Roboto', sans-serif;
 }
 
+main {
+  width: 100vw;
+  height: calc(100vh - 2rem);
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  background-color: #fbf7f1;
+}
 article {
-  width:50vw;
-  max-width: 25em;
-  min-width:20em;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:flex-end;
-  background: rgb(0,239,255);
-  background: linear-gradient(0deg, rgba(0,239,255,1) 40%, #4e54c8 100%);
-  box-shadow:0 0 20px 20px rgba(0,0,0,.1);
-  border-radius:1rem;
+  width: 50vw;
+  max-width: 40em;
+  min-width: 25em;
+  min-height: 24em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgb(255 255 255);
+  box-shadow: 0 0 20px 20px rgba(0,0,0,.1);
+  border-radius: 1rem;
   position: relative;
-  transition:.25s;
+  transition: .25s;
+}
+
+section.blokCenter {
+  text-align: center;
+}
+
+.blokCenter h1,
+.blokCenter h2 {
+  margin: 0;
 }
 
 header {
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  justify-content:flex-end;
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0em 1em;
+  justify-content: flex-end;
 }
+
 h1 {
-  margin:2rem 0 1rem;
-  color: rgba(0,239,255,1);
+  color: #000;
+  font-size: 3.8em;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1.2rem;
+  font-family: 'Expletus Sans', cursive;
 }
-button {
-  border:none;
-  position: absolute;
-  right:1rem;
-  top:1rem;
-  width:2.5rem;
-  height:2.5rem;
-  transform: scale(.8);
-  background: rgba(0,239,255,1);
-  border-radius:50%;
-  padding:.25rem;
-  transition:.25s;
-}
-button:focus {
-  outline:none;
-  background:#202592;
-}
-button:focus svg {
-  stroke: rgba(0,239,255,1);
+h2{
+  font-weight: 200;
 }
 
-svg {
-  stroke: #4e54c8;
-  position: absolute;
-  top:calc(1.25rem - 12px);
-  left:calc(1.25rem - 12px);
-  transition-delay: .25s;
+.btn {
+  padding: 0.8rem 2rem;
+  background: #1e1d1d;
+  border-radius: 2rem;
+  cursor: pointer;
+  color: white;
+  transition: 250ms ease-in-out;
+  border: none;
 }
-button svg:nth-of-type(2) {
-  opacity:0;
-  transition-delay: 0;
+.btn:hover,
+.socials a:hover {
+  background: #413f3f;
 }
-h2 {
-  
-}
-img {
-  width:10em;
-  border-radius:10em;
-  border:5px solid #fff;
-  box-shadow:0 0 2px 2px rgba(0,0,0,.2);
-  position:relative;
-  top:2rem;
-  transition:.25s .15s;
-}
-dl {
-  width:100%;
-  background: rgb(255,255,255);
-  
-  display:grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas:
-    "html-dd css-dd js-dd"
-    "html-dt css-dt js-dt"
-    ;
-  justify-items:center;
-  align-items:start;
-  padding:5rem 0 3rem;
-  margin-top: -3rem;
-  margin-bottom: 0;
-  text-align: center;
-}
-dt{
-  font-weight: bold;
-  border-top: 1px solid rgba(0,0,0,0.3);
-  padding-top: .25rem;
-  margin-top: .25rem;
-}
-dt:nth-of-type(1){ grid-area: html-dt; }
-dt:nth-of-type(2){ grid-area: css-dt; transform: translateY(1rem);}
-dt:nth-of-type(3){ grid-area: js-dt; }
 
-dd {
-  margin:0;
-  padding-left:.3rem;
-  transition:.25s .3s;
+/* ICOONTJE BEWEEGT ALS JE OVER DE BUTTON HOVERT */
+.btn:hover i {
+  transform: translateX(.2rem);
+  transition: 250ms ease-in-out;
 }
-dd:nth-of-type(2){  
-  transform: translateY(1rem);
+
+article .btn {
+  position: absolute;
+  bottom: 2rem;
 }
 
 p { 
   margin:0
 }
 
-article > p {
-  padding:3rem 2rem;
-  margin-top: 0;
-  background:rgba(255,255,255, 0.5);
-  text-align:center;
-  border-radius: 0 0 1rem 1rem;
-  width:100%;
+ul,
+a.backBtn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+ul li {
+  display: inline-block;
+}
+ul li a {
+  text-decoration: none;
+  color: #1e1d1d;
+}
+.socials a,
+a.backBtn {
+  transition: 250ms ease-in-out;
+  padding: 0.8rem;
+  background-color: #1e1d1d;
+  color: white;
+  border-radius: 5rem;
+  margin-right: 1rem;
+}
+.socials li:last-child a{
+  margin-right: 0;
 }
 
-/* expand content */
-body.expand {
-  font-size:1.15em;
+i
+ {
+  transition: 250ms ease-in-out;
 }
-body.expand article {
-  width:60vw;
-  max-width: 60vw;
+a.backBtn:hover i {
+  transform: rotate(-20deg);
+  transition: 250ms ease-in-out;
 }
-body.expand button svg:first-of-type {
-  opacity:0;
-  transition-delay: 0;
+/* FLEX */
+.flexCenter {
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
-body.expand button svg:nth-of-type(2) {
-  opacity:1;
-  transition-delay:.25s;
+
+img {
+  position: absolute;
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    border: white 0.4rem solid;
+    top: -2rem;
+    left: -2rem;
+    /* hierdoor sized de img goed */
+    object-fit: cover;
 }
-body.expand dd {
-  font-size: 1.75em;
+
+/* --- FLIP CARDS ---  */
+.cards{
+  transition: .75s ease-in-out;
 }
-body.expand img {
-  width:15em;
+.cards:hover {
+  /* animation: bounce .75s ease-in-out; */
+}
+/* ANIMATIE BOUNCE */
+
+@keyframes bounce {
+  0%, 100% {transform: translateY(0);}
+  50% {transform: translateY(-.25rem);} /* - is omhoog */
+}
+@keyframes bounce2 {
+  0%, 100% {transform: translateY(0);}
+  20% {transform: translateY(-1rem);} /* - is omhoog */
+  40% {transform: translateY(.75rem);}
+  60% {transform: translateY(-.5rem);}
+  80% {transform: translateY(.25rem);}
+}
+/* EINE ANIMATIE BOUNCE */
+
+main {
+  perspective: 1000px;
+}
+
+.cards {
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.cards.turned {
+  transform: rotateY(180deg);
+}
+
+.turned .cardFront {
+  /* display: none; */
+}
+.turned .cardBack {
+  /* display: flex; */
+}
+
+.cardFront,
+.cardBack{
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.cardBack{
+  position: absolute;
+  /* display: none; */
+  transition: .75s ease-in-out;
+  /* wanneer je flipt staat de tekst goed */
+  transform: rotateY(180deg);
+}
+.showCard .cardBack{
+  display: flex;
+  transition: .75s ease-in-out;
+}
+
+/* --- FOOTER --- */
+footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2rem;
+  background: #1e1d1d;
+  text-align: center;
+  color: rgba(158, 158, 158, 0.603);
 }
