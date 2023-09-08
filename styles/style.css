@@ -81,7 +81,8 @@ h2{
   border: none;
 }
 .btn:hover,
-.socials a:hover {
+.socials a:hover,
+button.backBtn:hover {
   background: #413f3f;
 }
 
@@ -101,7 +102,8 @@ p {
 }
 
 ul,
-a.backBtn {
+a.backBtn,
+button.backBtn  {
   position: absolute;
   top: 2rem;
   right: 2rem;
@@ -114,13 +116,15 @@ ul li a {
   color: #1e1d1d;
 }
 .socials a,
-a.backBtn {
+a.backBtn,
+button.backBtn {
   transition: 250ms ease-in-out;
   padding: 0.8rem;
   background-color: #1e1d1d;
   color: white;
   border-radius: 5rem;
   margin-right: 1rem;
+  border: none;
 }
 .socials li:last-child a{
   margin-right: 0;
@@ -130,9 +134,14 @@ i
  {
   transition: 250ms ease-in-out;
 }
-a.backBtn:hover i {
+a.backBtn:hover i,
+button.backBtn:hover i {
   transform: rotate(-20deg);
   transition: 250ms ease-in-out;
+}
+
+button {
+  cursor: pointer;
 }
 /* FLEX */
 .flexCenter {
